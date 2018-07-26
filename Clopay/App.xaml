@@ -21,5 +21,6 @@
             </Style>
             <!-- Styles -->
         </ResourceDictionary>
+		 <!-- Application resource dictionary -->
     </Application.Resources>
 </Application>
