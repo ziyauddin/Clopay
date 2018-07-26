@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"                   
+    xmlns:views = "clr-namespace:Clopay.Views"               
+    x:Class="Clopay.Views.DashBoardPage">
+
+    <!--setting the Master page and Details page.-->
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <ContentPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                                iOS="hamburger.png"/>
+            </ContentPage.Icon>
+            <StackLayout Orientation="Vertical" WidthRequest="40" Padding="0,20,0,0">
+                <ListView x:Name="NavigationDrawerList" ItemsSource="{Binding MenuItems}" ItemSelected="OnMenuItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding IconSource}" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

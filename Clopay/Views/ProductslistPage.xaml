@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Products"
+             x:Class="Clopay.Views.ProductslistPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="toolbar.jpeg"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <StackLayout HorizontalOptions="FillAndExpand" 
+                         VerticalOptions="FillAndExpand" 
+                         Style="{StaticResource stackLayoutbg}">
+                <ListView ItemsSource="{Binding Items}" 
+                          CachingStrategy="RecycleElement" 
+                          HasUnevenRows="true" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout HeightRequest="230" Padding="10">
+                                    <Frame CornerRadius="5" OutlineColor="Gray" HeightRequest="200" Padding="0">
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout HeightRequest="190" Margin="5">
+                                                <Frame CornerRadius="5" OutlineColor="Gray" HeightRequest="190" Padding="0">
+                                                    <Image Source="{Binding ProductImage, Mode=TwoWay}" WidthRequest="190" Margin="10,0,10,10"/>
+                                                </Frame>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                                                    <Image Source="{Binding Play, Mode=TwoWay}" WidthRequest="25" HeightRequest="25"  Margin="5"/>
+                                                    <Image Source="{Binding Expand, Mode=TwoWay}" WidthRequest="25" HeightRequest="25"  Margin="5"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                                                    <Image Margin="5" Source="{Binding Information, Mode=TwoWay}"  WidthRequest="72" HeightRequest="25"/>
+                                                    <Image Margin="5" Source="{Binding Select, Mode=TwoWay}" WidthRequest="72" HeightRequest="25"/>
+                                                </StackLayout>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

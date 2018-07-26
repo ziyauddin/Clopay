@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  xmlns:ire="clr-namespace:Clopay.Extensions"  x:Class="Clopay.App">
+    <Application.Resources>
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <ControlTemplate x:Key="MainPageTemplate">
+                <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <BoxView BackgroundColor="#333333" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5"/>
+                    <Image Source="{ire:ImageResource Clopay.Images.logo.jpeg}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1" Margin="5"/>
+                    <Image Source="{ire:ImageResource Clopay.Images.home.jpeg}" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="1" Margin="5,5,0,5"/>
+                    <ContentPresenter VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"/>
+                </Grid>
+            </ControlTemplate>
+            <!-- Styles -->
+            <Style x:Key="stackLayoutbg" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#FFFFFF" />
+            </Style>
+            <!-- Styles -->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
